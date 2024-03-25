@@ -1,28 +1,31 @@
-# Windows PC Cleaner
+# System Cleaner
 
-This Python script is designed to clean and optimize your Windows PC by performing various system maintenance tasks. It clears temporary files, empties the Recycle Bin, runs Disk Cleanup, defragments the disk, and removes outdated registry entries.
+This Python script is designed to clean and optimize your macOS or Windows system by performing various maintenance tasks. It clears temporary files, empties the Trash or Recycle Bin, and performs system-specific optimizations.
 
 ## Features
-- Clears temporary files from the user's Temp and Temporary Internet Files directories.
-- Empties the Recycle Bin.
-- Runs the Disk Cleanup utility to remove unnecessary files.
-- Defragments the hard disk using the built-in defragmentation tool.
-- Removes outdated registry entries related to the Windows Explorer volume caches.
-- Automatically installs the required libraries (winshell and colorama) if they are not already installed.
+
+- Clears temporary files and caches on both macOS and Windows.
+- Empties the Trash on macOS and the Recycle Bin on Windows.
+- Runs disk verification on macOS using the `diskutil verifyVolume` command.
+- Runs Disk Cleanup and disk defragmentation on Windows using the `cleanmgr` and `defrag` commands.
+- Automatically installs the required libraries (colorama for both, and winshell for Windows) if they are not already installed.
 - Provides colorful and informative output using the colorama library.
 
 ## Prerequisites
-- Python 3.x installed on your Windows system.
-- Administrator privileges to run the script.
+
+- Python 3.x installed on your macOS or Windows system.
+- Administrator privileges to run the script (required on Windows).
 
 ## Usage
+
 1. Clone the repository or download the script file.
-2. Open a command prompt or terminal with administrator privileges.
+2. Open a terminal or command prompt.
+   - On Windows, make sure to run the command prompt as an administrator.
 3. Navigate to the directory where the script is located.
 4. Run the following command:
 
-    ```bash
-    python clean.py
+   ```bash
+   python cleaner.py
     ```
 
    The script will automatically install any missing libraries and start the cleaning process.
