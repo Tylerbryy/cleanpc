@@ -1,6 +1,5 @@
 # System Cleaner
 
-<<<<<<< HEAD
 This Python script is designed to clean and optimize your macOS or Windows system by performing various maintenance tasks. It clears temporary files, empties the Trash or Recycle Bin, and performs system-specific optimizations.
 
 ## Features
@@ -10,31 +9,10 @@ This Python script is designed to clean and optimize your macOS or Windows syste
 - Runs disk verification on macOS using the `diskutil verifyVolume` command.
 - Runs Disk Cleanup and disk defragmentation on Windows using the `cleanmgr` and `defrag` commands.
 - Automatically installs the required libraries (colorama for both, and winshell for Windows) if they are not already installed.
-=======
-This Python script is designed to clean and optimize your Windows or macOS system by performing various maintenance tasks. It clears temporary files, empties the Recycle Bin or Trash, and performs system-specific optimizations.
-
-## Features
-
-### Windows
-- Clears temporary files from the user's Temp and Temporary Internet Files directories.
-- Empties the Recycle Bin.
-- Runs the Disk Cleanup utility to remove unnecessary files.
-- Defragments the hard disk using the built-in defragmentation tool.
-- Removes outdated registry entries related to the Windows Explorer volume caches.
-
-### macOS
-- Clears temporary files from various directories such as ~/Library/Caches, ~/Library/Logs/DiagnosticReports, and ~/Library/Application Support/CrashReporter.
-- Empties the Trash directory (~/.Trash).
-- Verifies the integrity of the main disk using the diskutil verifyVolume command.
-
-### Common Features
-- Automatically installs the required libraries (winshell and colorama for Windows, colorama for macOS) if they are not already installed.
->>>>>>> 3d8d9afe098af63c14b7dccb6a8752b095d0e8db
 - Provides colorful and informative output using the colorama library.
 - Calculates and displays the total amount of data cleaned at the end of the cleaning process.
 
 ## Prerequisites
-<<<<<<< HEAD
 
 - Python 3.x installed on your macOS or Windows system.
 - Administrator privileges to run the script (required on Windows).
@@ -50,16 +28,6 @@ This Python script is designed to clean and optimize your Windows or macOS syste
    ```bash
    python cleaner.py
     ```
-=======
-- Python 3.x installed on your system.
-- Administrator privileges (for Windows) or necessary permissions (for macOS) to run the script and perform system-level tasks.
-
-## Usage
-1. Clone the repository or download the script files (cleanwindows.py for Windows, cleanmac.py for macOS).
-2. Open a command prompt or terminal with appropriate privileges.
-3. Navigate to the directory where the script files are located.
-4. Run the appropriate command for your operating system:
->>>>>>> 3d8d9afe098af63c14b7dccb6a8752b095d0e8db
 
    For Windows:
    ```
