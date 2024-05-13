@@ -26,15 +26,16 @@ def clear_directory(directory):
                     file_size = os.path.getsize(file_path)
                     os.remove(file_path)
                     total_cleaned += file_size
-                except:
-                    pass
+                except Exception as e:
+                    print(Fore.RED + f"Error removing file {file_path}: {e}" + Style.RESET_ALL)
             for dir in dirs:
                 dir_path = os.path.join(root, dir)
                 try:
-                    total_cleaned += sum(os.path.getsize(os.path.join(dir_path, f)) for f in os.listdir(dir_path))
+                    dir_size = sum(os.path.getsize(os.path.join(dir_path, f)) for f in os.listdir(dir_path))
                     shutil.rmtree(dir_path)
-                except:
-                    pass
+                    total_cleaned += dir_size
+                except Exception as e:
+                    print(Fore.RED + f"Error removing directory {dir_path}: {e}" + Style.RESET_ALL)
 
 def clear_temp_files():
     temp_dirs = []
@@ -64,28 +65,29 @@ def clear_trash():
             global total_cleaned
             total_cleaned += sum(item.size for item in recycle_bin)
             recycle_bin.empty(confirm=False, show_progress=False, sound=False)
-        except:
-            pass
+        except Exception as e:
+            print(Fore.RED + f"Error clearing Recycle Bin: {e}" + Style.RESET_ALL)
 
 def optimize_disk():
     if sys.platform == 'darwin':  # macOS
         try:
             subprocess.call(['diskutil', 'verifyVolume', '/'])
-        except:
-            pass
+        except Exception as e:
+            print(Fore.RED + f"Error optimizing disk: {e}" + Style.RESET_ALL)
     elif sys.platform == 'win32':  # Windows
         try:
             subprocess.call(['cleanmgr', '/sagerun:1'])
             subprocess.call(['defrag', '/C', '/U'])
-        except:
-            pass
+        except Exception as e:
+            print(Fore.RED + f"Error optimizing disk: {e}" + Style.RESET_ALL)
 
 def is_admin():
     if sys.platform == 'win32':  # Windows
         import ctypes
         try:
             return ctypes.windll.shell32.IsUserAnAdmin()
-        except:
+        except Exception as e:
+            print(Fore.RED + f"Error checking admin status: {e}" + Style.RESET_ALL)
             return False
     else:
         return True
